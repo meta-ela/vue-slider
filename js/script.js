@@ -59,8 +59,16 @@ const appVue = new Vue({
         changeButton: function(position){
             if(position === 'up') {
                 this.currentSlide++;
+
+                if(this.currentSlide >= this.slidesList.length) {
+                    this.currentSlide = 0;
+                }
             } else if(position === 'down'){
                 this.currentSlide--;
+
+                if(this.currentSlide < 0) {
+                    this.currentSlide = this.slidesList.length -1;
+                }
             }
         }
     },
