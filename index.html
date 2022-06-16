@@ -16,7 +16,7 @@
         <div class="container" >
             <div class="slider-wrapper" tabindex="0">
 
-                <div class="item">
+                <!-- <div class="item">
                     <img src="img/01.jpg" alt="Svezia" />
                     <div class="text">
                         <h3>Svezia</h3>
@@ -25,13 +25,22 @@
                             veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.
                         </p>
                     </div>
+                </div> -->
+                <div class="item">
+                    <img :src="slidesList[currentSlide].image" :alt="slidesList[currentSlide].title" />
+                    <div class="text">
+                        <h3>{{slidesList[currentSlide].title}}</h3>
+                        <p>
+                            {{slidesList[currentSlide].text}}
+                        </p>
+                    </div>
                 </div>
 
                 <div class="thumbs">
-                    <div class="prev"></div>
-                    <div class="next"></div>
-                    <div class="thumb" v-for="image in boxSlides">
-                        <img :src="image.image" alt="Svezia"/>
+                    <div class="prev" @click="prevButton(slide)"></div>
+                    <div class="next" @click="nextButton()"></div>
+                    <div class="thumb" v-for="slide in slidesList">
+                        <img :src="slide.image" :alt="slide.title"/>
                     </div>
                     <!-- <div class="thumb">
                         <img src="img/02.jpg" alt="Svizzera" />

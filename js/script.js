@@ -51,10 +51,13 @@ const appVue = new Vue({
     el: "#app",
 
     data: {
-        boxSlides: slides,
+        slidesList: slides,
+        currentSlide: 0,
     },
 
     methods: {
-
+        prevButton: function(){
+            
+        }
     },
 });
