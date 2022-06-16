@@ -37,8 +37,8 @@
                 </div>
 
                 <div class="thumbs">
-                    <div class="prev" @click="prevButton(slide)"></div>
-                    <div class="next" @click="nextButton()"></div>
+                    <div class="prev" @click="changeButton('up')"></div>
+                    <div class="next" @click="changeButton('down')"></div>
                     <div class="thumb" v-for="slide in slidesList">
                         <img :src="slide.image" :alt="slide.title"/>
                     </div>
